@@ -1,0 +1,52 @@
+[
+  {
+    "path": "hello.py",
+    "bytes": 152,
+    "sha256": "c3bd421df2d2ec92b958c3fc8c7569f0ea6302966c82a00d132dd782820ac7e9"
+  },
+  {
+    "path": "learning-log.md",
+    "bytes": 818,
+    "sha256": "da2026c6d802a6f7ed287232881669e8d770a961ec5f2ea9a00209c0d2b80477"
+  },
+  {
+    "path": "learn-z/log.md",
+    "bytes": 5391,
+    "sha256": "1428dbbe84985169fe8d03f27687f682eb3631e497572a91f76068cb17883171"
+  },
+  {
+    "path": "learn-z/Python阶段测验_前56节.md",
+    "bytes": 13356,
+    "sha256": "ed5e27cff0e7df57579933b1c6da8581534325456225a268efd6b485ee5e3653"
+  },
+  {
+    "path": "learn-z/Python阶段测验_答案与评分.md",
+    "bytes": 19996,
+    "sha256": "a926de6032eb305442d3b58b39680c77165c678a31cc2bda0fc435b7d59eafda"
+  },
+  {
+    "path": "learn-z/Python阶段测验_答题.py",
+    "bytes": 2640,
+    "sha256": "2c07a0edffa2fcfd1c88bc940f53df7a3910f658b7fc74875ca818e90c694a93"
+  },
+  {
+    "path": "learn-z/列表.md",
+    "bytes": 27112,
+    "sha256": "b46316b7f77bb487ae77e8cb3ef426867ee6bcfb1938a4e12650cb564277383a"
+  },
+  {
+    "path": "learn-z/大三学习与消费执行路线.md",
+    "bytes": 14476,
+    "sha256": "df41633d14e45765a7588bde23a1949b9056aff2a78c9fafe6a021dfc8c00c6c"
+  },
+  {
+    "path": "learn-z/字符与元组.md",
+    "bytes": 44576,
+    "sha256": "2ad5af3c462c3c7ace077e927b0fc152f65b393d0e03b753fefc0d4b97765ff6"
+  },
+  {
+    "path": "learn-z/字符和元组习题.py",
+    "bytes": 1133,
+    "sha256": "12a858537d682658ccc94813d3a871abced2777986c332dda922b5729b7a6cfd"
+  }
+]

@@ -1,0 +1,10 @@
+# Python 自动生成的缓存
+__pycache__/
+*.py[cod]
+# 本地虚拟环境
+.venv/
+venv/
+# 本地密钥配置（将来用API时才需要）
+.env
+.env.*
+!.env.example
