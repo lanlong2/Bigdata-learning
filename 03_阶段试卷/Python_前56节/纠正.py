@@ -47,7 +47,7 @@ for i,p in rows:
     sum=sum+p
 print(f"""
 总分：{sum}
-平均分：{sum/len(rows)}
+平均分：{sum/len(rows):.1f}
 """)
 # ### D2.3 · 及格名单（3 分）
 
@@ -62,7 +62,10 @@ passed_names=[]
 for i,p in rows:
     if p >=60:
         passed_names.append(i)
-print(passed_names)
+if passed_names:
+    print("及格名单："+"、".join(passed_names))
+else:
+    print("及格名单：无")
 # ### D2.4 · 最高分（3 分）
 
 # 找出分数最高的学生，输出：
@@ -70,8 +73,7 @@ print(passed_names)
 # ```text
 # 最高分：陈雨 91分
 # ```
-max=0
-mna=""
+mna,max=rows[0]
 for i,p in rows:
     if p>max:
         max=p
@@ -147,3 +149,87 @@ print(f"""
 
 # ```text
 # 有效记录：5条
+raw_orders = " Pen , 2 ; notebook,3;; PEN,4; eraser , 1; notebook ,3;   ;\n"
+raw_li=raw_orders.split(";")
+raw_clean=[]
+for i in raw_li:
+    raw_d=i.strip()
+    if raw_d:
+        raw_clean.append(raw_d)
+print(raw_clean)
+# ### D3.2 · 整理成元组记录（4 分）
+
+# 进一步清洗每条记录，创建列表 `records`，每个元素都是 `(小写商品名, 整数数量)`，顺序与有效记录一致。打印 `records`，结果应为：
+
+# ```text
+# [('pen', 2), ('notebook', 3), ('pen', 4), ('eraser', 1), ('notebook', 3)]
+# ```
+records=[]
+for a in raw_clean:
+    i,p=a.split(",")
+    i=i.strip().lower()
+    p=int(p.strip())
+    records.append((i,p))
+print(records)
+
+# ### D3.3 · 按商品累计数量（4 分）
+
+# 创建字典 `totals`，键是商品名，值是这种商品的累计数量。按商品名字母升序逐行输出：
+
+# ```text
+# eraser：1件
+# notebook：6件
+# pen：6件
+# ```
+total={}
+for i,p in records:
+    if i in total:
+        total[i]=total[i]+p
+    else :
+        total[i]=p
+
+for i in sorted(total):
+    print(f"{i}:{total[i]}件")
+
+# ### D3.4 · 商品去重与种类统计（4 分）
+
+# 用集合 `product_names` 保存不重复的商品名，统计种类数，并按商品名字母升序输出清单：
+
+# ```text
+# 商品种类：3种
+# 商品清单：eraser、notebook、pen
+# ```
+z=0
+q=[]
+for i in total:
+        q.append(i)
+z=len(q)
+print(f"{z}")
+h="、".join(q)
+print(f"物品清单：{h}")
+
+# ### D3.5 · 找出全部最高销量商品（4 分）
+
+# 找出**累计数量**最多的商品。如果并列，要全部保留并按商品名字母升序输出：
+
+# ```text
+# 最高销量：6件
+# 最高销量商品：notebook、pen
+# ```
+
+# 更换数据后，如果最高销量商品只有一个，也按照同样格式输出该商品名。
+
+# ---
+max=0
+li=[]
+for i  in sorted(total):
+    p=total[i]
+    if p>max:
+        max=p
+        li=[i]
+    elif p==max:
+        li.append(i)
+    else:
+        pass
+print(f"最高销量：{max}件")
+print("商品清单:"+",".join(sorted(li)))

@@ -19,7 +19,7 @@ while True:
                 print("学生已存在")
             else:
                 scsyc=int(input("请输入学生语文成绩："))
-                scssc=int(input("请输入学生数学成绩"))
+                scssc=int(input("请输入学生数学成绩："))
                 scsyyc=int(input("请输入学生英语成绩："))
 
                 scsc[scsn]={"语文成绩":scsyc,"数学成绩":scssc,"英语成绩":scsyyc}
