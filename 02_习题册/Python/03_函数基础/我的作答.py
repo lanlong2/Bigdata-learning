@@ -17,13 +17,13 @@ print(total_cost(8,3))
 # F03 · 返回格式化记录
 # 我的思路／预测：
 def score_label(name,score):
-    return str(name+":"+score)
+    return str(name+":"+str(score))
 print(score_label("小林",86))
 
 
 # F04 · 区分打印和返回
 # 我的思路／预测：
-#预测：第一个输出5，第二个输出零，因为函数没有return东西
+#预测：第一个输出5，第二个输出None，因为函数没有return东西
 #改写：
 def add(a,b):
     print(a+b)
@@ -48,7 +48,7 @@ print(average([60,80,100]))
 # F06 · 封装名字清洗
 # 我的思路／预测：
 def normalize_name(name):
-    name_c=name.strip()
+    name_c=name.lower().strip()
     return name_c
 print(normalize_name(" Alice Smith \n"))
 
@@ -73,14 +73,14 @@ def total(scores):
         sum=sum+i
     return sum
 def average(scores):
-    sum=0
-    for i in scores:
-        sum=sum+i
-    return sum/len(scores)
-def summarize(scores):
     if scores:
-        return (total(scores),average(scores))
+        sum=0
+        for i in scores:
+            sum=sum+i
+        return sum/len(scores)
     else:
-        return (0,None)
+        return None
+def summarize(scores):
+        return (total(scores),average(scores))
 a=[79,49,60]
 print(summarize(a))
