@@ -21,7 +21,7 @@ format_record(score=86,name="小林")
 # G03 · 默认分数线
 # 我的思路／预测：
 def is_pass(score,threshold=60):
-    if score >= 60:
+    if score >= threshold:
         return True
     else:
         return False
@@ -79,10 +79,12 @@ def summarize_orders(orders,min_quantity=1):
     a=0
     sum1=0
     for i in orders:
-        if i[1]>=1:
+        if i[1]>=min_quantity:
             a=a+1
-            sum1=sum1+a[i[1]]
-    if a:
+            sum1=sum1+i[1]
+    if a>=1:
+        return (a,sum1)
+    else:
         return (0,0)
 a=[("手机",3),("电脑",0),("耳机",1),("汽车",2)]
 print(summarize_orders(a,1))

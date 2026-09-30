@@ -6,7 +6,7 @@
 # F01 · 让函数返回一句问候
 # 我的思路／预测：
 def greet(name):
-    return "你好"+name
+    return "你好"+"，"+name
 print(greet("小林"))
 
 # F02 · 计算总价
