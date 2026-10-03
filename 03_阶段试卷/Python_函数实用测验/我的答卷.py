@@ -66,7 +66,7 @@ def recived_total(*quantity):
         return 0
 batches=[2,4,1]
 print(recived_total(3,0,5))
-print(recived_total(batches))    
+print(recived_total(*batches))    
 # C03（10分）order_label与调用：
 # def order_label(**field:product="未命名"):
 
