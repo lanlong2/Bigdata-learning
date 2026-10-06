@@ -1,3 +1,7 @@
 # M03：从helpers导入clean_name，传入题目数据并打印。
 # M04：检查导入时是否出现额外打印。
 # 从VS Code运行这个文件，不要把模块名误写成文件路径。
+
+from helpers import clean_name
+
+print(clean_name(" Alice "))
