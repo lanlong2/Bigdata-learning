@@ -1,0 +1,1080 @@
+{
+  "record_date": "2026-10-09",
+  "source_sha256": "ea3c970452edf6258453ee6aa972197a27394d6820242a3f3bda026fca7dae4f",
+  "cases": [
+    {
+      "case": "sample",
+      "input_csv": "order_id,product,quantity,unit_price\nO001, Pen ,2,3\nO002,notebook,3,8\nO003,PEN,4,3\nO004,eraser,1,2\nO005, notebook ,3,8\nO002,notebook,3,8\nO006,,2,5\nO007,pencil,abc,2\nO008,pen,-1,3\nO009,ruler,0,4\nO010,marker,1,-2\n",
+      "expected": {
+        "valid_orders": 5,
+        "invalid_rows": 5,
+        "duplicates": 1,
+        "total_quantity": 13,
+        "sales": 68,
+        "product_quantities": {
+          "pen": 6,
+          "notebook": 6,
+          "eraser": 1
+        },
+        "clean_orders": [
+          {
+            "order_id": "O001",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O002",
+            "product": "notebook",
+            "quantity": 3,
+            "unit_price": 8
+          },
+          {
+            "order_id": "O003",
+            "product": "pen",
+            "quantity": 4,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O004",
+            "product": "eraser",
+            "quantity": 1,
+            "unit_price": 2
+          },
+          {
+            "order_id": "O005",
+            "product": "notebook",
+            "quantity": 3,
+            "unit_price": 8
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 5,
+        "invalid_rows": 5,
+        "duplicates": 0,
+        "total_quantity": 13,
+        "sales": 68,
+        "clean_orders": [
+          {
+            "order_id": "O001",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O002",
+            "product": "notebook",
+            "quantity": 3,
+            "unit_price": 8
+          },
+          {
+            "order_id": "O003",
+            "product": "pen",
+            "quantity": 4,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O004",
+            "product": "eraser",
+            "quantity": 1,
+            "unit_price": 2
+          },
+          {
+            "order_id": "O005",
+            "product": "notebook",
+            "quantity": 3,
+            "unit_price": 8
+          }
+        ],
+        "error_reasons": [
+          "字段为空",
+          "商品数量,单价应为整数",
+          "数量，单价应大于0",
+          "数量，单价应大于0",
+          "数量，单价应大于0"
+        ],
+        "json_content": [
+          {
+            "order_id": "O001",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O002",
+            "product": "notebook",
+            "quantity": 3,
+            "unit_price": 8
+          },
+          {
+            "order_id": "O003",
+            "product": "pen",
+            "quantity": 4,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O004",
+            "product": "eraser",
+            "quantity": 1,
+            "unit_price": 2
+          },
+          {
+            "order_id": "O005",
+            "product": "notebook",
+            "quantity": 3,
+            "unit_price": 8
+          }
+        ],
+        "stdout": "[{'order_id': 'O001', 'product': 'pen', 'quantity': 2, 'unit_price': 3}, {'order_id': 'O002', 'product': 'notebook', 'quantity': 3, 'unit_price': 8}, {'order_id': 'O003', 'product': 'pen', 'quantity': 4, 'unit_price': 3}, {'order_id': 'O004', 'product': 'eraser', 'quantity': 1, 'unit_price': 2}, {'order_id': 'O005', 'product': 'notebook', 'quantity': 3, 'unit_price': 8}, {'order_id': 'O002', 'product': 'notebook', 'quantity': 3, 'unit_price': 8}]\n[{'order_id': 'O001', 'product': 'pen', 'quantity': 2, 'unit_price': 3}, {'order_id': 'O002', 'product': 'notebook', 'quantity': 3, 'unit_price': 8}, {'order_id': 'O003', 'product': 'pen', 'quantity': 4, 'unit_price': 3}, {'order_id': 'O004', 'product': 'eraser', 'quantity': 1, 'unit_price': 2}, {'order_id': 'O005', 'product': 'notebook', 'quantity': 3, 'unit_price': 8}]\n68 13 5\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": false,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "header_only",
+      "input_csv": "order_id,product,quantity,unit_price\n",
+      "expected": {
+        "valid_orders": 0,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 0,
+        "sales": 0,
+        "product_quantities": {},
+        "clean_orders": []
+      },
+      "actual": {
+        "valid_orders": 0,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 0,
+        "sales": 0,
+        "clean_orders": [],
+        "error_reasons": [],
+        "json_content": [],
+        "stdout": "[]\n[]\n0 0 0\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "single_order_normalization",
+      "input_csv": "order_id,product,quantity,unit_price\n O100 , Pen , 2 , 3 \n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "zero_price",
+      "input_csv": "order_id,product,quantity,unit_price\nO100,pen,2,0\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 0,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 0
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 0,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 0
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 0
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 0}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 0}]\n0 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "minimum_quantity",
+      "input_csv": "order_id,product,quantity,unit_price\nO100,pen,1,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 1,
+        "sales": 3,
+        "product_quantities": {
+          "pen": 1
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 1,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 1,
+        "sales": 3,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 1,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 1,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 1, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 1, 'unit_price': 3}]\n3 1 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "zero_negative_values_then_valid",
+      "input_csv": "order_id,product,quantity,unit_price\nO101,pen,0,3\nO102,pen,-1,3\nO103,pen,1,-1\nO100,pen,2,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 3,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 3,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [
+          "数量，单价应大于0",
+          "数量，单价应大于0",
+          "数量，单价应大于0"
+        ],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "invalid_numbers_then_valid",
+      "input_csv": "order_id,product,quantity,unit_price\nO101,pen,abc,3\nO102,pen,1,abc\nO103,pen,2.5,3\nO104,pen,1,3.5\nO100,pen,2,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 4,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 4,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [
+          "商品数量,单价应为整数",
+          "商品数量,单价应为整数",
+          "商品数量,单价应为整数",
+          "商品数量,单价应为整数"
+        ],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "empty_fields_then_valid",
+      "input_csv": "order_id,product,quantity,unit_price\n,pen,1,3\nO102,   ,1,3\nO103,pen,,3\nO104,pen,1,\nO100,pen,2,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 4,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 4,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [
+          "字段为空",
+          "字段为空",
+          "字段为空",
+          "字段为空"
+        ],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "duplicates_keep_first",
+      "input_csv": "order_id,product,quantity,unit_price\nO100,pen,2,3\nO100,notebook,9,8\n O100 ,eraser,1,0\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 2,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}, {'order_id': 'O100', 'product': 'notebook', 'quantity': 9, 'unit_price': 8}, {'order_id': 'O100', 'product': 'eraser', 'quantity': 1, 'unit_price': 0}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": false,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "same_product_different_ids",
+      "input_csv": "order_id,product,quantity,unit_price\nO100,Pen,2,3\nO101,PEN,4,5\n",
+      "expected": {
+        "valid_orders": 2,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 6,
+        "sales": 26,
+        "product_quantities": {
+          "pen": 6
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O101",
+            "product": "pen",
+            "quantity": 4,
+            "unit_price": 5
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 2,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 6,
+        "sales": 26,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O101",
+            "product": "pen",
+            "quantity": 4,
+            "unit_price": 5
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          },
+          {
+            "order_id": "O101",
+            "product": "pen",
+            "quantity": 4,
+            "unit_price": 5
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}, {'order_id': 'O101', 'product': 'pen', 'quantity': 4, 'unit_price': 5}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}, {'order_id': 'O101', 'product': 'pen', 'quantity': 4, 'unit_price': 5}]\n26 6 2\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "invalid_then_valid_then_duplicate",
+      "input_csv": "order_id,product,quantity,unit_price\nO100,pen,abc,3\nO100,pen,2,3\nO100,pen,5,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 1,
+        "duplicates": 1,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 1,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [
+          "商品数量,单价应为整数"
+        ],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}, {'order_id': 'O100', 'product': 'pen', 'quantity': 5, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": false,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "valid_then_invalid_same_id",
+      "input_csv": "order_id,product,quantity,unit_price\nO100,pen,2,3\nO100,pen,abc,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 1,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 1,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [
+          "商品数量,单价应为整数"
+        ],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "blank_lines_and_delimiters",
+      "input_csv": "order_id,product,quantity,unit_price\n\n\r\n,,,\n\n",
+      "expected": {
+        "valid_orders": 0,
+        "invalid_rows": 1,
+        "duplicates": 0,
+        "total_quantity": 0,
+        "sales": 0,
+        "product_quantities": {},
+        "clean_orders": []
+      },
+      "actual": {
+        "valid_orders": 0,
+        "invalid_rows": 1,
+        "duplicates": 0,
+        "total_quantity": 0,
+        "sales": 0,
+        "clean_orders": [],
+        "error_reasons": [
+          "字段为空"
+        ],
+        "json_content": [],
+        "stdout": "[]\n[]\n0 0 0\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "missing_extra_columns_then_valid",
+      "input_csv": "order_id,product,quantity,unit_price\nO101,pen,1,3,extra\nO102,pen,1\nO100,pen,2,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 2,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "pen": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 2,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [
+          "字段超过表头",
+          "缺少字段"
+        ],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "case_sensitive_ids",
+      "input_csv": "order_id,product,quantity,unit_price\n AbC , Pen ,1,2\nabc,pen,2,3\n",
+      "expected": {
+        "valid_orders": 2,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 3,
+        "sales": 8,
+        "product_quantities": {
+          "pen": 3
+        },
+        "clean_orders": [
+          {
+            "order_id": "AbC",
+            "product": "pen",
+            "quantity": 1,
+            "unit_price": 2
+          },
+          {
+            "order_id": "abc",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 2,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 3,
+        "sales": 8,
+        "clean_orders": [
+          {
+            "order_id": "AbC",
+            "product": "pen",
+            "quantity": 1,
+            "unit_price": 2
+          },
+          {
+            "order_id": "abc",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "AbC",
+            "product": "pen",
+            "quantity": 1,
+            "unit_price": 2
+          },
+          {
+            "order_id": "abc",
+            "product": "pen",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'AbC', 'product': 'pen', 'quantity': 1, 'unit_price': 2}, {'order_id': 'abc', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'AbC', 'product': 'pen', 'quantity': 1, 'unit_price': 2}, {'order_id': 'abc', 'product': 'pen', 'quantity': 2, 'unit_price': 3}]\n8 3 2\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "utf8_product",
+      "input_csv": "order_id,product,quantity,unit_price\nO100, 笔 ,2,3\n",
+      "expected": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "product_quantities": {
+          "笔": 2
+        },
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "笔",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ]
+      },
+      "actual": {
+        "valid_orders": 1,
+        "invalid_rows": 0,
+        "duplicates": 0,
+        "total_quantity": 2,
+        "sales": 6,
+        "clean_orders": [
+          {
+            "order_id": "O100",
+            "product": "笔",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "error_reasons": [],
+        "json_content": [
+          {
+            "order_id": "O100",
+            "product": "笔",
+            "quantity": 2,
+            "unit_price": 3
+          }
+        ],
+        "stdout": "[{'order_id': 'O100', 'product': '笔', 'quantity': 2, 'unit_price': 3}]\n[{'order_id': 'O100', 'product': '笔', 'quantity': 2, 'unit_price': 3}]\n6 2 1\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    },
+    {
+      "case": "all_invalid",
+      "input_csv": "order_id,product,quantity,unit_price\n,pen,1,3\nO102,pen,abc,3\nO103,pen,0,3\n",
+      "expected": {
+        "valid_orders": 0,
+        "invalid_rows": 3,
+        "duplicates": 0,
+        "total_quantity": 0,
+        "sales": 0,
+        "product_quantities": {},
+        "clean_orders": []
+      },
+      "actual": {
+        "valid_orders": 0,
+        "invalid_rows": 3,
+        "duplicates": 0,
+        "total_quantity": 0,
+        "sales": 0,
+        "clean_orders": [],
+        "error_reasons": [
+          "字段为空",
+          "商品数量,单价应为整数",
+          "数量，单价应大于0"
+        ],
+        "json_content": [],
+        "stdout": "[]\n[]\n0 0 0\n"
+      },
+      "checks": {
+        "csv_fields_and_rows": true,
+        "valid_count": true,
+        "invalid_count_and_reasons": true,
+        "quantity_and_sales": true,
+        "duplicate_counter": true,
+        "json_contains_clean_order_list": true,
+        "json_is_summary_object": false,
+        "specified_output_paths": false,
+        "repeat_csv_and_json_identical": true
+      }
+    }
+  ],
+  "source_unchanged_during_verification": true,
+  "totals": {
+    "csv_fields_and_rows": 17,
+    "valid_count": 17,
+    "invalid_count_and_reasons": 17,
+    "quantity_and_sales": 17,
+    "duplicate_counter": 14,
+    "json_contains_clean_order_list": 17,
+    "json_is_summary_object": 0,
+    "specified_output_paths": 0,
+    "repeat_csv_and_json_identical": 17
+  },
+  "case_count": 17,
+  "interpretation": "Clean-order JSON equality verifies the implemented export only; it does not satisfy the required statistical-summary JSON. Product quantities are independent expected values, not a claimed main.py output. Cases run successively in one temporary project, so empty cases also check stale-output removal."
+}
