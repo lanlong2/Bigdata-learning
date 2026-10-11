@@ -1,7 +1,7 @@
 -- SQL 订单分析案例：完整示范，待学习。
--- 仅连接个人 PostgreSQL 练习数据库，先运行共享练习数据脚本。
+-- 仅连接个人 MySQL 8.4 LTS 练习数据库，先运行共享练习数据脚本。
 -- 不在真实业务数据上执行；本文件只查询 sql_learning 的共享练习表。
-SET search_path TO sql_learning;
+USE sql_learning;
 
 -- C01｜已支付整体概览：7 笔、14 件、40.00 元。
 SELECT COUNT(*) AS paid_order_count,

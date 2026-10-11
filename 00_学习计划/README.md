@@ -2,6 +2,8 @@
 
 **2026-10-10：Python学习阶段已结束，已进入SQL学习阶段。**
 
+2026-10-11技术选型更新：SQL统一使用MySQL 8.4 LTS与DBeaver，专用数据库为`sql_learning`，查询前执行`USE sql_learning;`。当前主线为Python → SQL／MySQL → Pandas → 项目 → 实习。旧日志保留当时技术选型，当前按MySQL计划推进。
+
 | 文件／目录 | 用途 |
 |---|---|
 | [当前进度](当前进度.md) | 全局阶段摘要与各技术进度入口 |

@@ -2,6 +2,8 @@
 
 本页供Python与SQL共用。2026-10-10已进入SQL学习阶段；保存SQL作答时使用实际编辑的 `.sql` 文件路径，提交说明写实际完成的内容。下面10-03书面检查保留为Python阶段历史。
 
+使用 DBeaver 写 SQL 时，先看 [DBeaver 与 GitHub 同步流程](DBeaver与GitHub同步.md)：直接编辑项目里的 `.sql`，Ctrl+S 保存到项目，再提交并推送到 GitHub。
+
 **2026-10-03书面检查：综合卷F01为1.5/5。** status和push正确，需补未暂存diff、准确文件名、diff --cached以及commit -m。见[逐项批改](../../03_阶段试卷/Python/Python_当前所学综合卷/2026-10-03_批改分析与综合评价.md)。这是书面命令核验，没有新增Git实操通过记录。
 
 ## 命令写在哪里

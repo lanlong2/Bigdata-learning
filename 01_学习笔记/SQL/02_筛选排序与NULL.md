@@ -1,6 +1,6 @@
 # 02 筛选、排序与 NULL
 
-状态：待学习。前置：[01_基础查询](01_基础查询.md)。配套：[基础题 Q05—Q08](../../02_习题册/SQL/00_基础查询/题目.md)。新窗口先运行 `SET search_path TO sql_learning;`。
+状态：待学习。前置：[01_基础查询](01_基础查询.md)。配套：[基础题 Q05—Q08](../../02_习题册/SQL/00_基础查询/题目.md)。新窗口先运行 `USE sql_learning;`。
 
 ## 1. WHERE 选择要保留的行
 
@@ -103,7 +103,7 @@ WHERE product_name LIKE '%e%';
 | `'%e%'` | 任意位置有 e | pen、notebook、eraser |
 | `'__'` | 恰好两个字符 | 客户名 bo、cy |
 
-本课程使用普通默认排序规则，`LIKE` 会区分英文字母大小写，`'P%'` 不匹配 `pen`。匹配规则可能受数据库排序规则影响；暂不自定义规则。文字中真的含有 `%` 或 `_` 时要额外使用转义写法，本模块题目不涉及。
+课程初始化明确使用 `utf8mb4_0900_as_cs` 排序规则，`LIKE` 在这些课程文字列上区分英文字母大小写，`'P%'` 不匹配 `pen`。其他 MySQL 数据库常使用不同排序规则，可能不区分大小写；不要把课程结果当成所有 MySQL 连接的默认行为。排序规则在建库和建表时准备，当前练习无需自行更换。文字中真的含有 `%` 或 `_` 时要额外使用转义写法，本模块题目不涉及。
 
 ## 5. 缺失值用 IS NULL 判断
 
@@ -160,15 +160,15 @@ ORDER BY quantity DESC, order_id ASC;
 
 不要认为 `DESC` 会作用于前面所有列：`ORDER BY quantity DESC, order_id` 中第二列默认升序。使用唯一订单编号打破并列，才能固定全部行的相对顺序。
 
-PostgreSQL 升序默认把 `NULL` 放最后，降序默认放最前。需要明确位置时写 `NULLS FIRST` 或 `NULLS LAST`，例如：
+MySQL 升序默认把 `NULL` 放最前，降序默认放最后，也没有 `NULLS FIRST`／`NULLS LAST` 这种排序写法。若要按客户编号升序且缺失值最后显示，可以增加一个排序条件：
 
 ```sql
 SELECT order_id, customer_id
 FROM orders
-ORDER BY customer_id ASC NULLS LAST, order_id ASC;
+ORDER BY customer_id IS NULL, customer_id ASC, order_id ASC;
 ```
 
-客户编号缺失的 1007 最后显示。中文城市的先后可能随排序规则不同；要核对固定顺序的练习优先用数值编号排序。
+`customer_id IS NULL` 对已知编号得到 0，对缺失编号得到 1；先升序排列这一列，再排编号，就把缺失的 1007 放到最后。这是排序表达式，不是新增表字段。中文城市的先后可能随排序规则不同；要核对固定顺序的练习优先用数值编号排序。
 
 ## 7. LIMIT 取前几行
 
@@ -186,7 +186,7 @@ LIMIT 3;
 
 本阶段完整书写顺序是：
 
-```sql
+```text
 SELECT 要显示的列
 FROM 来源表
 WHERE 行条件
@@ -208,7 +208,8 @@ LIMIT 行数;
 
 ## 官方依据
 
-- [查询表](https://www.postgresql.org/docs/18/tutorial-select.html)：筛选与排序。
-- [比较与缺失判断](https://www.postgresql.org/docs/18/functions-comparison.html)：闭区间、未知比较结果与 `IS NULL`。
-- [文字模式匹配](https://www.postgresql.org/docs/18/functions-matching.html)：`LIKE`、`%` 与 `_`。
-- [限制行数](https://www.postgresql.org/docs/18/queries-limit.html)：`LIMIT` 与确定排序。
+- [SELECT](https://dev.mysql.com/doc/refman/8.4/en/select.html)：筛选、排序与 `LIMIT`。
+- [比较运算符](https://dev.mysql.com/doc/refman/8.4/en/comparison-operators.html)：闭区间、未知比较结果与 `IS NULL`。
+- [字符串比较与 LIKE](https://dev.mysql.com/doc/refman/8.4/en/string-comparison-functions.html)：模式匹配与排序规则。
+- [NULL 的处理](https://dev.mysql.com/doc/refman/8.4/en/working-with-null.html)：缺失判断与排序。
+- [日期文字值](https://dev.mysql.com/doc/refman/8.4/en/date-and-time-literals.html)：`DATE 'YYYY-MM-DD'`。

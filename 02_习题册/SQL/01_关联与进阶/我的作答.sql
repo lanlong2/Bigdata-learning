@@ -1,7 +1,7 @@
 -- SQL 关联与进阶：我的作答（初始空白，待练习）
--- 仅连接个人 PostgreSQL 练习数据库；不在真实业务数据上运行。
+-- 仅连接个人 MySQL 8.4 LTS 练习数据库；不在真实业务数据上运行。
 -- 先运行教材共享数据脚本。J01—J11 只查询，J12 仅操作自建 j12_notes。
-SET search_path TO sql_learning;
+USE sql_learning;
 
 -- J01｜已登记客户的支付订单（04）
 

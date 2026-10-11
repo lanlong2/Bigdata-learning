@@ -6,12 +6,14 @@ SQL 用来向关系数据库描述“我要哪些数据、怎样统计、怎样�
 
 ## 从哪里开始
 
-1. 阅读 [00_环境与关系表](00_环境与关系表.md)，已有可用PostgreSQL时直接连接，未安装时先安装；创建或连接专用学习数据库。
-2. 在该库执行 [00_重建练习库.sql](练习数据/00_重建练习库.sql)。**每次执行都会清空并重建 `sql_learning` schema；其中应只存本课程练习数据。**
-3. 每次新开查询窗口先执行 `SET search_path TO sql_learning;`，再按下表顺序学习。
+这台电脑的实际版本、ZIP 用户后台实例和登录自启方式见 [本机环境说明](本机环境说明.md)。新电脑从下面的 00 模块配置；本机已有实例先复用。
+
+1. 阅读 [00_环境与关系表](00_环境与关系表.md)，已有可用 MySQL 8.4 时先复用，未安装时按 Windows 步骤准备；用 DBeaver 连接专用数据库 `sql_learning`。
+2. 在该库执行 [00_重建练习库.sql](练习数据/00_重建练习库.sql)。**每次执行都会先删除模块 07 的 `module07_tasks`（若已创建），再删除并重建 `orders`、`products`、`customers` 三张共享课程表，清空这四张表中已有的数据。脚本不删除整个数据库；结构操作不能靠一次回滚恢复。**
+3. 每次新开查询窗口先执行 `USE sql_learning;`，再按下表顺序学习。
 4. 做模块中的就地练习，再打开对应题目；先写 [我的作答.sql](../../02_习题册/SQL/00_基础查询/我的作答.sql)，需要时再看独立的答案文件。
 
-默认方言为 PostgreSQL，官方资料核对日期为 2026-10-10，链接固定到 PostgreSQL 18 文档；本教程基础语法也适用于 PostgreSQL 17。MySQL、SQLite、SQL Server 在安装、日期、限制行数等方面会有差异，先不要混用教程命令。
+本教程于 2026-10-11 改为 **MySQL 8.4 LTS**，使用 DBeaver Community 中文客户端，官方链接对应 MySQL 8.4 手册。专用库统一为 `sql_learning`，每次新窗口先运行 `USE sql_learning;`。课程使用 InnoDB 和严格 SQL 模式；文字采用 `utf8mb4_0900_as_cs` 排序规则。环境、语法和结果以本版说明为准，不混用其他数据库命令。改版仅表示材料准备，不改变待学习、待练习状态。
 
 ## 模块 → 习题
 
@@ -48,8 +50,8 @@ SQL 用来向关系数据库描述“我要哪些数据、怎样统计、怎样�
 
 ## 官方资料
 
-- [PostgreSQL 入门教程](https://www.postgresql.org/docs/18/tutorial.html)：从连接数据库到 SQL 基础。
-- [查询语句](https://www.postgresql.org/docs/18/tutorial-select.html)：列、表达式、筛选、排序、去重。
-- [聚合函数入门](https://www.postgresql.org/docs/18/tutorial-agg.html)：分组和聚合前后筛选。
+- [MySQL 8.4 入门教程](https://dev.mysql.com/doc/refman/8.4/en/tutorial.html)：从连接数据库到 SQL 基础。
+- [SELECT 查询语句](https://dev.mysql.com/doc/refman/8.4/en/select.html)：列、表达式、筛选、排序、去重。
+- [聚合函数](https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html)：分组和汇总结果。
 
 各模块末尾还有与本模块直接对应的官方资料，中文讲解和练习数据由本资料重新编写。

@@ -1,8 +1,8 @@
 -- SQL 基础查询个人作答模板：尚未作答。
--- 只在自己创建的专用学习数据库运行。
+-- 在 DBeaver 中连接 MySQL 8.4 LTS，只在专用学习数据库 sql_learning 运行。
 -- 可以使用自己的别名；题目要求的结果列、条件与排序需要满足。
-SET search_path TO sql_learning;
-
+USE sql_learning;
+select 1
 -- 阶段一：学完 01_基础查询后
 
 -- Q01 指定列

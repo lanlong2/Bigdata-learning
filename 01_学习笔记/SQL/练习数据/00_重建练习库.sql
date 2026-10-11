@@ -1,38 +1,53 @@
--- PostgreSQL 专用课程初始化脚本。
--- 执行前：连接自己新建的专用学习数据库，例如 sql_learning_db。
--- 注意：每次运行都会删除并重建 sql_learning schema，清空其中全部对象和数据。
--- sql_learning 中只应存本课程数据；不要让其他 schema 的对象依赖课程对象，
--- 因为 CASCADE 也会删除依赖这些对象的外部对象。
--- 本脚本不删除数据库，也不删除 public schema。
--- 00—03 的学习者不需要先掌握下列建表语法；模块 07 再系统解释。
+-- MySQL 8.4 LTS 课程数据：只用于专用学习库 sql_learning。
+-- 重复执行会删除 module07_tasks，并清空重建 customers、products、orders。
+-- 不删除整个数据库，不删除其他表；模块 07 的任务练习需重新创建。
+-- 如已写入自己的练习数据，请先备份。遇到第一条错误立即停止，不跳过错误继续。
+-- MySQL 的 CREATE / DROP / ALTER 会隐式提交，整份脚本不能用 ROLLBACK 撤销。
+-- 00—06 先把本文件当作课程准备工具；建表、约束与事务在模块 07 学习。
 
-BEGIN;
+CREATE DATABASE IF NOT EXISTS sql_learning
+    CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_as_cs;
+ALTER DATABASE sql_learning
+    CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_as_cs;
+USE sql_learning;
 
-DROP SCHEMA IF EXISTS sql_learning CASCADE;
-CREATE SCHEMA sql_learning;
-SET search_path TO sql_learning;
+-- 先删除引用其他表的课程表，不关闭外键检查。
+DROP TABLE IF EXISTS module07_tasks;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers (
     customer_id INTEGER PRIMARY KEY,
     customer_name VARCHAR(50) NOT NULL,
     city VARCHAR(50)
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE products (
     product_id INTEGER PRIMARY KEY,
     product_name VARCHAR(50) NOT NULL,
     category VARCHAR(50) NOT NULL,
-    unit_price NUMERIC(10, 2) NOT NULL CHECK (unit_price >= 0)
-);
+    unit_price DECIMAL(10, 2) NOT NULL,
+    CONSTRAINT chk_products_price CHECK (unit_price >= 0)
+) ENGINE=InnoDB;
 
 CREATE TABLE orders (
     order_id INTEGER PRIMARY KEY,
-    customer_id INTEGER REFERENCES customers(customer_id),
-    product_id INTEGER NOT NULL REFERENCES products(product_id),
-    quantity INTEGER NOT NULL CHECK (quantity > 0),
+    customer_id INTEGER,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
     order_date DATE NOT NULL,
-    status VARCHAR(20) NOT NULL CHECK (status IN ('paid', 'cancelled'))
-);
+    status VARCHAR(20) NOT NULL,
+    CONSTRAINT fk_orders_customer FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+    CONSTRAINT fk_orders_product FOREIGN KEY (product_id)
+        REFERENCES products(product_id),
+    CONSTRAINT chk_orders_quantity CHECK (quantity > 0),
+    CONSTRAINT chk_orders_status CHECK (status IN ('paid', 'cancelled'))
+) ENGINE=InnoDB;
+
+-- 以下数据写入在同一事务中提交；这一段事务不包括上面的建表操作。
+START TRANSACTION;
 
 INSERT INTO customers (customer_id, customer_name, city) VALUES
     (1, 'ada', '北京'),
@@ -59,7 +74,15 @@ INSERT INTO orders (order_id, customer_id, product_id, quantity, order_date, sta
 
 COMMIT;
 
--- 初始化后的三条检查：预期分别显示 5、4、8。
+-- 预期：客户 5 行、商品 4 行、订单 8 行。
 SELECT COUNT(*) AS customer_rows FROM customers;
 SELECT COUNT(*) AS product_rows FROM products;
 SELECT COUNT(*) AS order_rows FROM orders;
+
+-- 预期：已付款 7 笔、14 件、40.00 元。
+SELECT COUNT(*) AS paid_orders,
+       SUM(o.quantity) AS paid_quantity,
+       SUM(o.quantity * p.unit_price) AS paid_amount
+FROM orders AS o
+JOIN products AS p ON p.product_id = o.product_id
+WHERE o.status = 'paid';

@@ -8,3 +8,16 @@ venv/
 .env
 .env.*
 !.env.example
+
+# 本机数据库、客户端状态与账号配置不提交；可复现的 .sql 脚本正常提交。
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+.dbeaver/
+.mysql-local/
+mysql-private/
+*.local.ini
+*.local.json

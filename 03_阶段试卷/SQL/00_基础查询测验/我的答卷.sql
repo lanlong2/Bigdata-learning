@@ -4,8 +4,8 @@
 -- 结束时间：
 -- 实际用时（扣除休息）：
 -- 是否查看资料/解析或使用提示，涉及题号：
--- 先连接个人练习数据库，初始化课程数据；每次选中一道题执行。
-SET search_path TO sql_learning;
+-- 在 DBeaver 中连接 MySQL 8.4 LTS 的 sql_learning，初始化课程数据；每次选中一道题执行。
+USE sql_learning;
 
 -- A01（10分）：
 
