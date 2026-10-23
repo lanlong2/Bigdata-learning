@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-23",
+  "type": "助手教材示例校验，不记用户学习完成",
+  "python": "3.12.6",
+  "java_compiler": "javac 17.0.20.1",
+  "note": "Java在现有JDK17上验证基础语法；教学建议JDK21未在本次安装。代码与输出均在临时目录生成并清理。",
+  "passed": [
+    "Python导入不触发文件读写",
+    "Python正常输入与报告字段、计数、顺序正确",
+    "Python教材配套断言检查通过",
+    "Python错误元素类型按约定失败",
+    "Python错误顶层类型按约定失败",
+    "Python无效JSON按约定失败",
+    "Python缺失文件按约定失败，旧输出未被误判为成功",
+    "Java HelloJava编译运行输出正确",
+    "Java StudyCard编译运行输出正确",
+    "Java整数除法、浮点除法与字符串拼接示例正确",
+    "WeeklyCard参考答案编译与输出正确",
+    "FixCard参考答案编译与输出正确",
+    "BudgetCard参考答案编译与输出正确",
+    "BudgetCard变更参数后重新编译与输出正确",
+    "HelloBackend参考答案编译与输出正确"
+  ]
+}

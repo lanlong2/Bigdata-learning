@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-23",
+  "type": "助手资料维护校验，不记作用户学习完成",
+  "protection": {
+    "protected_files": 123,
+    "changed": [],
+    "original_plan_snapshots": 9,
+    "snapshot_changed": [],
+    "initial_sql_modified_files_preserved": [
+      "01_学习笔记/SQL/本机环境说明.md",
+      "01_学习笔记/SQL/练习数据/02_用于练习和草稿.sql",
+      "02_习题册/SQL/00_基础查询/我的作答.sql"
+    ],
+    "04_错题与疑问": "未修改"
+  },
+  "local_markdown_navigation": {
+    "target_files_checked": 1303,
+    "missing_targets": [],
+    "scope": "核对本地目标文件存在；不检查网页可用性或Markdown锚点"
+  },
+  "learning_budget": {
+    "daily_hours": 1.5,
+    "days_per_week": 6,
+    "weekly_hours": 9,
+    "ai_modules": {
+      "A00": 35,
+      "A01": 20,
+      "A02": 25,
+      "A03": 15,
+      "A04": 35,
+      "A05": 45
+    },
+    "java_modules": {
+      "J00": 95,
+      "J01": 55,
+      "J02": 60,
+      "J03": 45,
+      "J04": 75,
+      "J05": 20,
+      "J06": 100
+    },
+    "ai_hours": 175,
+    "java_hours": 450,
+    "additional_remediation_hours": 75,
+    "total": 700,
+    "project_hours": "A05的45小时和J06的100小时已含在对应路线",
+    "full_weeks_until_2028_04_23": 78,
+    "calendar_hours": 702
+  },
+  "whitespace": {
+    "this_refactor_tracked_diff_check": "通过",
+    "new_markdown_files": "通过",
+    "preexisting_sql_trailing_spaces": "原作答已有5处，保留未改"
+  },
+  "manual_review": [
+    "先完成大模型应用，再Java；Java就业主目标保持",
+    "SQL共用一次，J03深化不重复入门",
+    "完成事实、旧分数及维护记录分开；后续教材和试卷待展开明确标记",
+    "独立项目的核心功能有前置；A02教材及练习导航已补齐Python数据库访问"
+  ],
+  "code_examples": "新教材示例校验.json",
+  "runtime_note": "在临时目录校验，不修改本机数据库，不执行重建库；Java基础示例使用现有JDK17",
+  "files": {
+    "modified_by_refactor": 42,
+    "new_files": 56
+  }
+}

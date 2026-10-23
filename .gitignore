@@ -9,6 +9,11 @@ venv/
 .env.*
 !.env.example
 
+# Java编译产物与Maven构建目录；源文件、测试和构建配置仍正常保存。
+*.class
+target/
+hs_err_pid*.log
+
 # 本机数据库、客户端状态与账号配置不提交；可复现的 .sql 脚本正常提交。
 *.db
 *.db-wal

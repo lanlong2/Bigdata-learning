@@ -1,0 +1,554 @@
+{
+  "date": "2026-10-23",
+  "purpose": "资料重构保护原代码、原作答、数据、评分和用户管理的错题目录；含重构开始时已有的SQL未提交改动。",
+  "protected_files": [
+    {
+      "path": "01_学习笔记/Git/首次运行_hello.py",
+      "sha256": "c3bd421df2d2ec92b958c3fc8c7569f0ea6302966c82a00d132dd782820ac7e9"
+    },
+    {
+      "path": "01_学习笔记/Python/00_核心语法.md",
+      "sha256": "f6704ff2ed2747a6cf72c7021eff5326bb215faa7ab394edd2acf667689d301f"
+    },
+    {
+      "path": "01_学习笔记/Python/01_列表.md",
+      "sha256": "f5f679e1bd953707021b6fd9a77e6ca57076981edfd340753f4f849ea9f4c4e3"
+    },
+    {
+      "path": "01_学习笔记/Python/02_字符串.md",
+      "sha256": "6dfdcda0fd1ffefe422b69380b412fd9f76d7131a621ab5ddc89a578f5c9437e"
+    },
+    {
+      "path": "01_学习笔记/Python/03_元组.md",
+      "sha256": "7918aa24b6cdb50415b8ee29c742fef6125934d69e7a800303c57c70459b35f4"
+    },
+    {
+      "path": "01_学习笔记/Python/04_字典与集合.md",
+      "sha256": "4a6bb243661d4ab75aa878491dd0f46356c6ed294f6b2e1f9ffb3d55a6cac6b1"
+    },
+    {
+      "path": "01_学习笔记/Python/05_函数基础.md",
+      "sha256": "08b33c2000ded1f115d6bcdfbee312050733c1c11631d54ec2bd421c83cae29b"
+    },
+    {
+      "path": "01_学习笔记/Python/06_函数进阶.md",
+      "sha256": "f109896507082ecfdbd91c79665a9a4696958325e3b44a7b1f24c47cd3625756"
+    },
+    {
+      "path": "01_学习笔记/Python/07_容器综合与拓展.md",
+      "sha256": "00dd93fb491e5abf9796dfc0c98bd78fda41dd0d18d9bb6ad2d5cfc06d05a62f"
+    },
+    {
+      "path": "01_学习笔记/Python/08_类型注解与模块.md",
+      "sha256": "a1463baec47d5204d428ae963d67ec100fbea74599176f849c820e8587bee5c5"
+    },
+    {
+      "path": "01_学习笔记/Python/09_异常与文件读写.md",
+      "sha256": "508297dfdce883957d025c4f67f0531e831e59e69eba56c4088fa4a1c6e19876"
+    },
+    {
+      "path": "01_学习笔记/SQL/00_环境与关系表.md",
+      "sha256": "66236a33ec0ca4210a60b03efd3aee4011a5eb2d92df9a8ee1858baa3a84d9fe"
+    },
+    {
+      "path": "01_学习笔记/SQL/01_基础查询.md",
+      "sha256": "882aedc682982042403c1a9909526f1a24da6148e5b96a1107f00e2dbc7f5d9b"
+    },
+    {
+      "path": "01_学习笔记/SQL/02_筛选排序与NULL.md",
+      "sha256": "0926f42a568ccfe024913e6aaf59b4b58d872b41d348e5ef42206243803f8225"
+    },
+    {
+      "path": "01_学习笔记/SQL/03_聚合与分组.md",
+      "sha256": "e1ccc7b67a45ccd52f8976fd346cc110e9eaa0815c5f57f8aa52a7257f1c5446"
+    },
+    {
+      "path": "01_学习笔记/SQL/04_多表连接.md",
+      "sha256": "ef6897920028aba8fd30b7b7613aa241c3342f05f9de69bdc672e821d7052a60"
+    },
+    {
+      "path": "01_学习笔记/SQL/05_子查询与CTE.md",
+      "sha256": "b93d7ed6c2c480d28e14fda61d9d6bee7ec3bab7f7456b8a4b0e2fc065dbcba5"
+    },
+    {
+      "path": "01_学习笔记/SQL/06_窗口函数.md",
+      "sha256": "ac3a3f6ba4b34ab58929a2fda7c5658a19424047e804ec4f60d4895ff5c8aa8d"
+    },
+    {
+      "path": "01_学习笔记/SQL/07_建表约束与事务.md",
+      "sha256": "6816f1ecc00ada0a02723dc488c202565573e4ac90227e3ec98294e487f31a1f"
+    },
+    {
+      "path": "01_学习笔记/SQL/本机环境说明.md",
+      "sha256": "a8c7f622bfd2e54445a8cc62311aaeea4e8302a2adae69dc50d5ffad736dd761"
+    },
+    {
+      "path": "01_学习笔记/SQL/练习数据/00_重建练习库.sql",
+      "sha256": "7567f7b94c93d0512db87fa62e0023dcfcf6791c12a4e241d4829d523a42abe4"
+    },
+    {
+      "path": "01_学习笔记/SQL/练习数据/01_验证学习环境.sql",
+      "sha256": "81a549fa29a9526d9dbc39d611532a09ea4fcc8561506568597f0d60f8791947"
+    },
+    {
+      "path": "01_学习笔记/SQL/练习数据/02_用于练习和草稿.sql",
+      "sha256": "b3888df88ddddf95c68ca19b843c0f16afd9d7d2a7450df7b5586c3de2957492"
+    },
+    {
+      "path": "02_习题册/Python/00_核心语法/我的作答.py",
+      "sha256": "aaccaffbb51021a38fe604710dbfe93fff9549ffec7b0d25b0ba91dbd9d19f4c"
+    },
+    {
+      "path": "02_习题册/Python/00_核心语法/答案解析.md",
+      "sha256": "1499ff381be592f06c6efe59e236db59ffa2bf98873f9805a72d13c440279333"
+    },
+    {
+      "path": "02_习题册/Python/00_核心语法/题目.md",
+      "sha256": "c744fcd381ae70cc46addb9a774612d8bbc44787fe21236f80cc04a155466ed1"
+    },
+    {
+      "path": "02_习题册/Python/01_列表/我的作答.py",
+      "sha256": "ae0c0f87203856b0b853dc8ae73b2a85206f7305b383638fd608430a4bfcbf68"
+    },
+    {
+      "path": "02_习题册/Python/01_列表/答案解析.md",
+      "sha256": "440d9eaed8332696f04280b3343c596ef9a95dbf58610d2063d3dab97b19a61d"
+    },
+    {
+      "path": "02_习题册/Python/01_列表/题目.md",
+      "sha256": "b12d12620710570a70005d99f49b6881324ca8a2005eac46e0198d73bbde7490"
+    },
+    {
+      "path": "02_习题册/Python/02_字符串与元组/我的作答.py",
+      "sha256": "e0bd17a056ab0b57a71034374f99c21d234e93fafcc6e8d8ae0a17709468d9c4"
+    },
+    {
+      "path": "02_习题册/Python/02_字符串与元组/答案解析.md",
+      "sha256": "00ca82ed57cb892a2d1b3df414aa5d59471ab15c7247d170580c1b77048c1c13"
+    },
+    {
+      "path": "02_习题册/Python/02_字符串与元组/题目.md",
+      "sha256": "38dabb6f65582ec749613ce531a8089cdfe16379c6ebf3635cac956ae40ae0cf"
+    },
+    {
+      "path": "02_习题册/Python/03_函数基础/2026-09-26_作答分析与综合评价.md",
+      "sha256": "fe743e97ca41669c096346246c9bc4a7e849d851e6fa2c216ed7a44a4fc40186"
+    },
+    {
+      "path": "02_习题册/Python/03_函数基础/2026-09-30_F01与G03订正确认.md",
+      "sha256": "38095be1959ba1d5942ceef549b83394896de8f9ab73c2f53b84c56ba49b5ffa"
+    },
+    {
+      "path": "02_习题册/Python/03_函数基础/2026-09-30_订正核对.md",
+      "sha256": "59de2e0bf07bc494b25ef25ab48e05de5d218be691b3c5d5a407ae6d6f251c3f"
+    },
+    {
+      "path": "02_习题册/Python/03_函数基础/我的作答.py",
+      "sha256": "249fcc1f300f696fbc66ebb92da34f56e0a00dca0160a0ca3cb830139743c3c2"
+    },
+    {
+      "path": "02_习题册/Python/03_函数基础/答案解析.md",
+      "sha256": "358756758da68b920d835de6ad391a9ab960cc58a24477b52fae3a44308766c8"
+    },
+    {
+      "path": "02_习题册/Python/03_函数基础/题目.md",
+      "sha256": "060b6ce8a2405c50c67760fcfa59f1c6bfd2ca9e559185fc9151ebbb2d314475"
+    },
+    {
+      "path": "02_习题册/Python/04_函数进阶/2026-09-30_作答分析与综合评价.md",
+      "sha256": "e5179b682ab48ad7c21ba26730d19c0beef8e0b58e1456f721cd9e5ab96a5905"
+    },
+    {
+      "path": "02_习题册/Python/04_函数进阶/我的作答.py",
+      "sha256": "b3bef3d5c913f63030d92979c9708ec379b758402ef24558fc9477b74c793927"
+    },
+    {
+      "path": "02_习题册/Python/04_函数进阶/答案解析.md",
+      "sha256": "efc5c0729454d861c65ea80d130c5675541c3f7f151b680364c1030583832e13"
+    },
+    {
+      "path": "02_习题册/Python/04_函数进阶/题目.md",
+      "sha256": "fb0787116f0fed3517c7c653a7da032296c2b74c840e7ff6bca81a5dfeaf4576"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/2026-10-06_订正分析.md",
+      "sha256": "565ac73d9d18fbc1d6816d039022adddaae4b3915ebd5c9ca46fff2022305e33"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/helpers.py",
+      "sha256": "f781acf7c48f35aea671c3fccea9388ea2d83b367acf49a5678b2fdcc94b3533"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/run_examples.py",
+      "sha256": "7ef9206d99870588bae0c7cf5af24f49edc307e7f44e9645ec34d648e0b1bcd2"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/我的作答.py",
+      "sha256": "f5e0719a047d20dda54f125998ce88e05992ad472f822be01ada1f6dae9bb7c2"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/答案解析.md",
+      "sha256": "8a013482a96b4d8fa970ca1c9b989bd381aca4c447dfdc22ec7c315c4012a9b6"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/订正.py",
+      "sha256": "c464b6afb39a950d4369aa3dfb5533eb0a0e36ddb14be859b38e109a38ded8f9"
+    },
+    {
+      "path": "02_习题册/Python/05_类型注解与模块/题目.md",
+      "sha256": "66b04bcee53903005a9fe0922c12b7e979eab63f8812851131259e55b2fe7915"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/JSON读写练习.py",
+      "sha256": "ed36ae47f69597c88f003a095afde186eaf3d45ee762e8bf0e0edb6f186a0898"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/我的作答.py",
+      "sha256": "f679e613443864034391c88129f77e15c07a965a9c74ad4d003dcdbfb6c158dd"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/我的输出/clean.csv",
+      "sha256": "1a95dd9e6f5a387ba28595ed33cb38600a6f5f1942faab0502b264fc1113ebc9"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/我的输出/name_clean.txt",
+      "sha256": "391a8ffd394648d1a01e221b4dec1a4f2472f9f5c851bad7eba8279addb4efb2"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/我的输出/record.json",
+      "sha256": "f58d8892c2990be2e3157efa7a8c72ac39460d5d5d5037dbb715dba4c1a23fc8"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/我的输出/文字演示.txt",
+      "sha256": "de8b4cf537d94c73dd5874dbd35e6b1b933580304a9ce11642df2f11fa12df3d"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/文本文件读写练习.py",
+      "sha256": "f7e9dd6bfdf18f2ec1a504ee6c3b463fbe6fba2cbc3873e3918ca7e7f525ae4b"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/示例_读名字.py",
+      "sha256": "f98c5f0ecb9ed03293f03bd6c350619ac8a6e1c244ff6a6d9f902404bfc7bf89"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/答案解析.md",
+      "sha256": "04f3c42eba42ab922c6dd71463652f0cdc224bc96a2228d0b6fd8c784496f6a6"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/练习数据/names.txt",
+      "sha256": "bf14de6f4cb6798e68f576e05286f975970a98b130527649b76df2bc68fa5a0a"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/练习数据/orders.csv",
+      "sha256": "2527009f09f1358c540089c682fec53716aee50580c5c0a330f14e94c17d476f"
+    },
+    {
+      "path": "02_习题册/Python/06_异常与文件读写/题目.md",
+      "sha256": "cbaf9ecfececf470fe0c65d7ee2744f0eacc6ad46510b4d7348cac342483a67d"
+    },
+    {
+      "path": "02_习题册/Python/07_字典与集合/我的作答.py",
+      "sha256": "c41847fc93dadaa19ba96a2e0473c085d4ac6c55a3af2217da1167f396f8180f"
+    },
+    {
+      "path": "02_习题册/Python/07_字典与集合/答案解析.md",
+      "sha256": "5de74a39b823380c75c2a03c526dd9e4118bc1bb602b67c30807639920a0705d"
+    },
+    {
+      "path": "02_习题册/Python/07_字典与集合/题目.md",
+      "sha256": "69bf31162e9fbe0196df3d321fb0f7702d2cbe82e5370f1b4d45987cdc9544d4"
+    },
+    {
+      "path": "02_习题册/SQL/00_基础查询/我的作答.sql",
+      "sha256": "721b7def2ad5e960be1da95a041fc153417a024837b9df6f4d3e9bb2b91a8e13"
+    },
+    {
+      "path": "02_习题册/SQL/00_基础查询/答案解析.md",
+      "sha256": "330145d12f9bf7a15c6aa7409436730695668f38f1fd24a80fa6e9eb98637858"
+    },
+    {
+      "path": "02_习题册/SQL/00_基础查询/题目.md",
+      "sha256": "833d447ad179bc48517fa16625a764d0802518a3f09d1eebd0a0d90756f40aa5"
+    },
+    {
+      "path": "02_习题册/SQL/01_关联与进阶/我的作答.sql",
+      "sha256": "6c609f9c68adee7ab3cd736de8bb605af4c574af178ff0408ae2089ebad22ad0"
+    },
+    {
+      "path": "02_习题册/SQL/01_关联与进阶/答案解析.md",
+      "sha256": "9eab89ffe24848addd59cc3a22a6d17b1d4950a131c8c46c42a86f6c7516bd1e"
+    },
+    {
+      "path": "02_习题册/SQL/01_关联与进阶/题目.md",
+      "sha256": "03ec0d330ff1bf754e5155eb41346aa2ea6b2a658c5588c3574916cc3cd2cff5"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/2026-10-03_订正评析与下一步.md",
+      "sha256": "df9db1a2bcad38b669c06db6949d0f85b7dea315ad3eee4489c253f29a25d72d"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/函数试卷综合评析.md",
+      "sha256": "a18581665c5a272f94d00004a45f7f3eae78440f505f39562f2d89475d241ff0"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/参考答案与评分.md",
+      "sha256": "6fe380ca2142dcd3a7e74cdc4b6473172ad87988a8c63ec4af1a090bb4987abb"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/我的答卷.py",
+      "sha256": "a009e78b00cb2a3bc506f254574710c5069edf0c6e8672bec5ada700670da5ba"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/测验记录.md",
+      "sha256": "d016d61c33d409e37f9072f8c42ae3a22189b5c424615d4ef42a4dfa1d66f6d5"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/纠正.py",
+      "sha256": "1c2bf1612ac09fb26a02fd0ee397a31075c41dba119f5312a35646f70fc6a2f9"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/试卷.md",
+      "sha256": "404991f268faa67cacda4d654ff43a4870eb51f955ce31473e3869eaf3ecf899"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_函数实用测验/错题答案对照与知识点详解.md",
+      "sha256": "5482914b9585d1399faedd4520c89ba08935a7df7b35055c8e33550604cf93bc"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/2026-09-17_批改分析与综合评价.md",
+      "sha256": "dcb4dbdfc2f4feb5e125a26df5bb83e02578fba099e26f22a2963914e0098b48"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/2026-09-21_订正复盘与下一步.md",
+      "sha256": "b25fe40e376f81f41f4215eae04caedeadb8698b8d98d357f9fdd94bcea6daca"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/参考答案与评分.md",
+      "sha256": "97c314221803938950ce0abca47bc5526df335a825331e7c7721489b451ef480"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/字符串清洗练习.py",
+      "sha256": "cd0a1761eb01d4f10843f13d5b19975be6d79d7b17d9e934575a17f76b1da55a"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/我的答卷.py",
+      "sha256": "ac112256d952247cd2f3954202dddb1624501074b8520356c3ea131852e38d88"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/测验记录.md",
+      "sha256": "4eeca61231471d8e2f819ca6172b83fce81be374b2ab4b2a3c92986b5b5418ca"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/纠正.py",
+      "sha256": "4689f4b7d57eee56e559b9933472acf9bf384f11dc3b8987956399059b947bcc"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_前56节/试卷.md",
+      "sha256": "a205af7113cff524eef3ded4cd40fac6bdcc6e146ea08d08f9ec2f857b88c02f"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/2026-10-03_批改分析与综合评价.md",
+      "sha256": "836b8aa1909361a0e7795959f2953ebde1a0cc8e173296f540f7c4523495e9c2"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/参考答案与评分.md",
+      "sha256": "4a27db67affca275f23ea97782984adc1988449813cb01d1f4bed51684594d5e"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/我的答卷.py",
+      "sha256": "60492f215564e7c0adad474b59afc47602abfcd31e71575e07cc5b9945ccfcfc"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/测验记录.md",
+      "sha256": "cb857cce1eca60e7a5b744d531a1c45f17e5f6a2bd57c27a45695e7ed42c2074"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/纠正.py",
+      "sha256": "55bc812a2160de1c05c8c1ba2f90d5158dcccae2beee42f98abd856a36ccf7df"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/试卷.md",
+      "sha256": "ece91df3c314017657c3d327ef74a226a59dae5b41a2cdf868ca0f3c3d2c2082"
+    },
+    {
+      "path": "03_阶段试卷/Python/Python_当前所学综合卷/错题分析.md",
+      "sha256": "b85606c11f5d6e13a12b4662741c97c8507ed3939f9e2be0db13e9f69ebf9de9"
+    },
+    {
+      "path": "03_阶段试卷/SQL/00_基础查询测验/参考答案与评分.md",
+      "sha256": "473508caf9c3612ea6bafd16f8a255e5b7ef6e54bb862ce32ea4ef3a1156cb8b"
+    },
+    {
+      "path": "03_阶段试卷/SQL/00_基础查询测验/我的答卷.sql",
+      "sha256": "23b0bf7577d4271e2e42c78c79f2540bcfdf9e0ae53078683098673b8ef9bad9"
+    },
+    {
+      "path": "03_阶段试卷/SQL/00_基础查询测验/测验记录.md",
+      "sha256": "578fd3b573d7d1f690e84dc7bffd1b1b0a08155b35c5b9a7ed86968813cf7358"
+    },
+    {
+      "path": "03_阶段试卷/SQL/00_基础查询测验/试卷.md",
+      "sha256": "e1e437cdcde24f7001e40f19dff9c55963136c4faa5312900433d5f0939969d7"
+    },
+    {
+      "path": "04_错题与疑问/Python/README.md",
+      "sha256": "ac3fae5c41f81d54fed5ad2dd10f919e23edcb6745bb746330edc09b700552fb"
+    },
+    {
+      "path": "04_错题与疑问/Python/疑问清单.md",
+      "sha256": "a40f7e53f1ffae0784946c09ab86502605dd4638f5a966587c570d8ac248bcea"
+    },
+    {
+      "path": "04_错题与疑问/Python/错题本.md",
+      "sha256": "3a644abc375b14ce028bc084228ecfa491b6b0fc4c90bf6f2ec3ee0ad8155782"
+    },
+    {
+      "path": "04_错题与疑问/README.md",
+      "sha256": "baf9c570a67003739890174d3a57677c0b63012b7df0ea3c212797587dbe03bd"
+    },
+    {
+      "path": "04_错题与疑问/SQL/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/2026-10-09_recheck_evidence.json",
+      "sha256": "e3d7f221a8093269e65fd12e0e1bd5a3ae33da1dc1221ded82f0f00d9d44d329"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/2026-10-09_再次评析与边界验证.md",
+      "sha256": "c4571d13eefdd19587dd4716426dbdbfff549f86ae9a6decbd6ff10db80d5af3"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/2026-10-09_完成情况评析与TODO6说明.md",
+      "sha256": "9d9af6de97f77345bc8f2261e85fb86254a1792a8539ce02fcaf056e577cb2ed"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/data/示例订单.csv",
+      "sha256": "2636f0d7ac597dbb87939ede5ca471dd85172c4f8a30ef6f65a748012087511b"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/src/main.py",
+      "sha256": "94d766171d48db0f95a78dd18a6bda1f4af18889f6a6548c159b92f01e81b432"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/任务书.md",
+      "sha256": "05b70b086d162d8ea32fee2b114e29ca674392435531d8d59bffd17687b62bf5"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/我的输出/result.csv",
+      "sha256": "d0d985fe6ec8891caf70f96c6d6d95732beb5feb5080a40c401ebf6a07894734"
+    },
+    {
+      "path": "05_项目实践/Python/00_本地数据清洗小工具/我的输出/result.json",
+      "sha256": "06b0c4e01ce50d0a1b1e414a705a2d8b92c44459f6459d6fe145bffdd54b6e01"
+    },
+    {
+      "path": "05_项目实践/Python/开始数据项目的准备清单.md",
+      "sha256": "6a54d01774bc91ff8567f18b1ddee7770374c351257f19bb8daa5ee981146e46"
+    },
+    {
+      "path": "05_项目实践/SQL/00_订单查询报告/我的查询.sql",
+      "sha256": "1bf6fecdb851bb211f8e6b67ebeaaf73d8149fb93aee2b99cabcc72bd40603c9"
+    },
+    {
+      "path": "08_案例学习/Python/黑马函数/照片/屏幕截图 2026-09-18 185106.png",
+      "sha256": "3de31d8a4b36bfbdb9ed7b253d0605121e7fddefbc404088537f1be61c8f4a70"
+    },
+    {
+      "path": "08_案例学习/Python/黑马函数/黑马函数.py",
+      "sha256": "f44fa34d62cb0a4bd07e60a427259f000baf86e07d879b7a4a4cdb11d783ea58"
+    },
+    {
+      "path": "08_案例学习/Python/黑马前56节/图片/示例.png",
+      "sha256": "a8bb4021ff87f5f7f391262791270bb437d609057ffd43995f067e74e189bf18"
+    },
+    {
+      "path": "08_案例学习/Python/黑马前56节/图片/说明.png",
+      "sha256": "e5792041899adafc4f2e4c42431dabb619d0b205039eb9241a7fc1964af29bf6"
+    },
+    {
+      "path": "08_案例学习/Python/黑马前56节/黑马前56节.py",
+      "sha256": "b642223fa7e5ca82661b94b776783c8b5e924f8f086f07764eaf4ebd4a31fc69"
+    },
+    {
+      "path": "08_案例学习/SQL/01_订单分析/示例查询.sql",
+      "sha256": "598e256b1ac604409afb816ce230cf01d9fed1913a25821534f73f25a9a56b58"
+    },
+    {
+      "path": "99_历史归档/Python/2026-09-17_整理前/hello.py",
+      "sha256": "c3bd421df2d2ec92b958c3fc8c7569f0ea6302966c82a00d132dd782820ac7e9"
+    },
+    {
+      "path": "99_历史归档/Python/2026-09-17_整理前/learn-z/Python阶段测验_答题.py",
+      "sha256": "2c07a0edffa2fcfd1c88bc940f53df7a3910f658b7fc74875ca818e90c694a93"
+    },
+    {
+      "path": "99_历史归档/Python/2026-09-17_整理前/learn-z/字符和元组习题.py",
+      "sha256": "12a858537d682658ccc94813d3a871abced2777986c332dda922b5729b7a6cfd"
+    },
+    {
+      "path": "99_历史归档/Python/原件校验清单.json",
+      "sha256": "6fdcbb83ecb2d5283395734bce97afca1528e7db7ab0e58a1143362892ca2b66"
+    },
+    {
+      "path": "99_历史归档/SQL/2026-10-11_SQLite入门/SQL第一课.sql",
+      "sha256": "7f42544c3c19764bc9538af8a9c4c87557db76473ecb2a1a90cefb320374b133"
+    }
+  ],
+  "snapshot_files": [
+    {
+      "original": "README.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/README.md.txt",
+      "sha256": "44ba888a68302df59af37f434eb1c58134ce0b2654a29a6e50d6a4f717743e26",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "AGENTS.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/AGENTS.md.txt",
+      "sha256": "af1e89b37b191575818501361f4257df7e6eb57c248ec7a6e99c2aaa615f83cf",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "00_学习计划/README.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/00_学习计划/README.md.txt",
+      "sha256": "ab46d82e811c375a62c90a77d11fb21473bc64da308bbbbe5d8f7698b6e8fd82",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "00_学习计划/年度路线与验收.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/00_学习计划/年度路线与验收.md.txt",
+      "sha256": "cf01ac8faba6ed041a3ab7329bea68bd67c283fc9b2ed4b66dce2896995aefd3",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "00_学习计划/近期执行计划.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/00_学习计划/近期执行计划.md.txt",
+      "sha256": "366f624dbd8938a2fa4b21ef1978a5e19ae77ebea846c2c5414e7ef00a36bf5f",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "00_学习计划/当前进度.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/00_学习计划/当前进度.md.txt",
+      "sha256": "8e25af1556ee8e7ac6ca77283834a1f70009986d98d6208b3b6e04cbc99c63ef",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "00_学习计划/预算与实际记录.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/00_学习计划/预算与实际记录.md.txt",
+      "sha256": "cd36ed065dd299b0da166141c3c2c58883a79447d87d53e9fd729ab86b6c674d",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "07_学习阶段与下一步/README.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/07_学习阶段与下一步/README.md.txt",
+      "sha256": "ab30f48b206d2a22821e782b056590a6febe6b162edb030051f45a4d6f4679ee",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    },
+    {
+      "original": "00_学习计划/SQL/近期执行计划.md",
+      "snapshot": "99_历史归档/2026-10-23_路线重构前/原文/00_学习计划/SQL/近期执行计划.md.txt",
+      "sha256": "f44f6c5b686850a9a9698f799c7a0d6b2690097a3bb1b3cb7e86f81a8a428cbd",
+      "source": "重构开始时干净文件对应的Git HEAD"
+    }
+  ]
+}
